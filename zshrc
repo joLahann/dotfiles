@@ -1,21 +1,18 @@
 # Path to your oh-my-zsh configuration.
-export ZSH=/home/johannes/.oh-my-zsh/
+export ZSH=$HOME/.oh-my-zsh
 
 # Private folder
-alias privateMount='cryfs /home/johannes/Dropbox/.encryptedPrivate /home/johannes/.private'
+alias privateMount='cryfs ${HOME}/Dropbox/.encryptedPrivate ${HOME}/.private'
 alias privateUMount='fusermount -u ~/.private'
 alias rmm='java -jar ~/scripts/rmm.jar '
 
-alias iwiMount='cryfs /home/johannes/Dropbox/.IWiPromotion /home/johannes/IWiPromotion'
+alias iwiMount='cryfs ${HOME}/Dropbox/.IWiPromotion ${HOME}/IWiPromotion'
 alias iwiUMount='fusermount -u ~/IWiPromotion'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 alias mux=tmuxinator
 
-#anaconda python environment
-export PATH=/home/johannes/anaconda3/bin:$PATH
-
 #Android SDK
-export ANDROID_HOME=/home/johannes/applications/android
+export ANDROID_HOME=${HOME}/applications/android
 export PATH=${PATH}:~/applications/android/platform-tools:/applications/android/tools
 
 # Set name of the theme to load.
@@ -159,14 +156,14 @@ export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/johannes/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$(${HOME}'/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/johannes/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/johannes/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "${HOME}/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "${HOME}/anaconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/johannes/anaconda3/bin:$PATH"
+        export PATH="${HOME}/anaconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
