@@ -171,7 +171,16 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-~/.dotfiles/linux/xmodmap.sh
 
 
-# After each command, save and reload history
+case `uname` in
+  Darwin)
+    # commands for OS X go here
+  ;;
+  Linux)
+    ~/.dotfiles/linux/xmodmap.sh
+  ;;
+  FreeBSD)
+    # commands for FreeBSD go here
+  ;;
+esac
